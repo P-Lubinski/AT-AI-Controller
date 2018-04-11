@@ -33,8 +33,8 @@ public class Enemy_script : MonoBehaviour
         var rotationRight = Quaternion.AngleAxis(fov, transform.up) * transform.forward;    // Right border of the cone of vision
         var rotationLeft = Quaternion.AngleAxis(-fov, transform.up) * transform.forward;    // Left border of the cone of vision
 
-        //Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, rotationRight * sightDist, Color.cyan); // right
-        //Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, rotationLeft * sightDist, Color.cyan); // left
+        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, rotationRight * sightDist, Color.red); // right
+        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, rotationLeft * sightDist, Color.red); // left
 
         // Code below checks if the character can see its enemy (the Player)
         if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, direction.normalized, out hitInfo, sightDist))
